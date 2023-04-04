@@ -12,6 +12,7 @@ After identifying the issues with the tables, this is the stage where the data q
 -- 1. On the `customer_order`s table, 
 -- Replace `null` strings and NULL values with blank space ('') in exclusions and extras column.
 -- =============================================================================================================================
+
 -- for the null and blank values in the extrusions column
 UPDATE customer_orders
 SET exclusions = CASE 
@@ -36,19 +37,10 @@ SELECT * FROM customer_orders;
 -- =============================================================================================================================
 -- 2. On the `runner_orders` table
 --    Replace `null` strings and NULL values with blank space ('').
---    In distance column, remove “km” and replace “null” string with blank space “ ”.
+--    In distance column, remove “km” and replace “null” string with blank space ('').
 --    In duration column, remove “mins”, “minute”, “minutes”, and “null” strings then replace it with blank space ('').
 --    Modify the data type of pickup_time to DATETIME, distance to FLOAT, and duration to INT.
 -- =============================================================================================================================
-
-For the runner_orders table: Data Quality issues observed are
-
-the pickup_time column has ‘null’ values
---  In the distance colum has the appearance of ‘km’, ‘null’ values and ‘ km’
-the duration column has the appearance of ‘minutes’, ‘null’, ‘mins’, ‘minute’
-the cancellation column has the appearance of ‘null’ and ‘ ‘
-Change the data types of the corrected columns
-The Code that would take care of these quality issues
 
 -- In pickup_time column, remove 'null' string and replace with blank space ('').
 UPDATE runner_orders
@@ -97,6 +89,6 @@ ALTER TABLE runner_orders
 MODIFY COLUMN duration INT;
 
 
--- =============================================================================================================================
+-- *****************************************************************************************************************************
 -- This Wraps up all the data cleaning requirements for the challenge.
--- =============================================================================================================================
+-- *****************************************************************************************************************************

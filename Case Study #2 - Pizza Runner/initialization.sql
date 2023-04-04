@@ -6,8 +6,7 @@
 DROP DATABASE IF EXISTS pizza_runner;
 CREATE DATABASE pizza_runner;
 
--- SET search_path = pizza_runner;
--- USE pizza_runner;
+USE pizza_runner;
 
 -- Creating `runners` table
 DROP TABLE IF EXISTS runners;
@@ -31,7 +30,7 @@ CREATE TABLE customer_orders (
   pizza_id        INTEGER,
   exclusions      VARCHAR(4),
   extras          VARCHAR(4),
-  order_time      TIMESTAMP
+  order_time      DATETIME
 );
 
 -- Inserting data into `customer_orders` table
@@ -120,3 +119,4 @@ INSERT INTO pizza_toppings VALUES
   (10, 'Salami'),
   (11, 'Tomatoes'),
   (12, 'Tomato Sauce');
+  

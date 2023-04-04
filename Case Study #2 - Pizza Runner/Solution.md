@@ -1,8 +1,9 @@
 ## Case Study Questions
 
-### 1. What is the total amount each customer spent at the restaurant?
+#### 1. What is the total amount each customer spent at the restaurant?
 
 ````sql
+--  1. What is the total amount each customer spent at the restaurant?
 SELECT 
     customer_id,
     SUM(price) AS 'total_amount_spent'
@@ -20,4 +21,21 @@ ORDER BY customer_id;
 _______________________________________________________________________________________________________________________________________________________
 
 
-### 2. How many days has each customer visited the restaurant?
+#### 2. How many days has each customer visited the restaurant?
+
+````sql
+-- 2. How many days has each customer visited the restaurant?
+SELECT 
+    customer_id,
+    COUNT(DISTINCT order_date) AS 'freq_visit'
+FROM sales
+GROUP BY customer_id
+ORDER BY 2 DESC;
+````
+|customer_id|freq_visit|
+|:----|:----|
+|B|6|
+|A|4|
+|C|2|
+_______________________________________________________________________________________________________________________________________________________
+

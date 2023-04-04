@@ -4,18 +4,18 @@
 
 ````sql
 SELECT 
-  s.customer_id,
-  SUM (m.price)
-FROM menu m JOIN sales s ON m.product_id = s.product_id 
+    customer_id,
+    SUM(price) AS 'total_amount_spent'
+FROM sales s LEFT JOIN menu m ON s.product_id = m.product_id
 GROUP BY customer_id
-ORDER BY s.customer_id 
+ORDER BY customer_id;
 ````
 
-|customer_id |price| SUM (m.price)|
-|----------- | ---- | ----------- |
-|A           |  10|         76|
-|B           |  10|         74|
-|C           |  12|         36|
+|customer_id |total_amount_spent|
+|----------- | ---- |
+|A           |  76|
+|B           |  74|
+|C           |  36|
 
 #### Answer: 
 Customer A: $76

@@ -1,17 +1,32 @@
 -- =============================================================================================================================
--- DATA CLEANING PROCESS
+-- DATA WRANGLING
 -- =============================================================================================================================
-/*
-Before we start the cleaning process, it is best practice to go through the data (access it) to discover the data quality issues and abnormalities in the data.
-Since the data is not a big data, Visual Assessment works just fine for the data.
 
-After identifying the issues with the tables, this is the stage where the data quality issues are dealt with
-*/
+-- Firstly, it is best practice to go through the data (access it) to discover the data quality issues and abnormalities in the data.
+-- Since the data is not a big data, Visual Assessment works just fine for the data.
+
+-- The first step is to visually Assess the tables to look for Data Quality 
+SELECT * FROM customer_orders;
+SELECT * FROM pizza_names;
+SELECT * FROM pizza_recipes;
+SELECT * FROM pizza_toppings;
+SELECT * FROM runner_orders;
+SELECT * FROM runners;
+
+-- After Assessing the data, the "runners" table, the "pizza_names" table, the "pizza_recipes" table and the "pizza toppings" table have no issues.
+-- But the "customer_orders" table and the "runner_orders" table have quality issues.
+  
 
 -- =============================================================================================================================
+-- DATA CLEANING
+-- =============================================================================================================================
+-- After identifying the issues with the tables, this is the stage where the data quality issues are dealt with
+
+
+-- ==================================================================================================
 -- 1. On the `customer_order`s table, 
 -- Replace `null` strings and NULL values with blank space ('') in exclusions and extras column.
--- =============================================================================================================================
+-- ==================================================================================================
 
 -- for the null and blank values in the extrusions column
 UPDATE customer_orders
@@ -76,17 +91,18 @@ SET cancellation = CASE
 -- 3.  Modify the data type of pickup_time to DATETIME, distance to FLOAT, and duration to INT.
 -- =============================================================================================================================
 -- Next step is to check the data type of the column
-DESCRIBE runner_orders;
+EXEC sp_columns runner_orders;
+
 
 -- To change the datatype of the columns
 ALTER TABLE runner_orders
-MODIFY COLUMN pickup_time DATETIME;
+ALTER COLUMN pickup_time DATETIME;
 
 ALTER TABLE runner_orders
-MODIFY COLUMN distance INT;
+ALTER COLUMN distance INT;
 
 ALTER TABLE runner_orders
-MODIFY COLUMN duration INT;
+ALTER COLUMN duration INT;
 
 
 -- *****************************************************************************************************************************

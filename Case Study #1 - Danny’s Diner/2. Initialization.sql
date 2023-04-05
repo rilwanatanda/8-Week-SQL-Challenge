@@ -2,7 +2,7 @@
 -- Case Study #1 - Danny's Diner
 -- #################################################################
 
---Creating Database
+-- Creating Database
 DROP DATABASE IF EXISTS dannys_diner;
 CREATE DATABASE dannys_diner;
 
@@ -10,9 +10,9 @@ USE dannys_diner;
 
 -- Creating `sales` table
 CREATE TABLE sales (
-  "customer_id"     CHAR(1),
-  "order_date"      DATE,
-  "product_id"      INTEGER
+  customer_id  	CHAR(1),
+  order_date    DATE,
+  product_id  	INTEGER
 );
 
 -- Inserting data into `sales` table
@@ -35,9 +35,9 @@ INSERT INTO sales VALUES
  
 -- Creating `menu` table
 CREATE TABLE menu (
-  "product_id"      INTEGER,
-  "product_name"    VARCHAR(5),
-  "price"           INTEGER
+  product_id      INTEGER,
+  product_name    VARCHAR(5),
+  price           INTEGER
 );
 
 -- Inserting data into `menu` table
@@ -48,11 +48,13 @@ INSERT INTO menu VALUES
   
 -- Creating `members` table
 CREATE TABLE members (
-  "customer_id"     CHAR(1),
-  "join_date"       DATE
+  customer_id     CHAR(1),
+  join_date       DATE
 );
 
 -- Inserting data into `members` table
 INSERT INTO members VALUES
   ('A', '2021-01-07'),
   ('B', '2021-01-09');
+  
+  

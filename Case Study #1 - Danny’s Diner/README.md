@@ -1,7 +1,7 @@
 # 🔥 Case Study #1 - Danny's Diner 🔥
 
 Case Study #1 - Danny's Diner
-![image](https://user-images.githubusercontent.com/65993041/230066602-4dd1bec7-b186-478d-8d2d-33200bdd7e80.png| width=100)
+![image](https://user-images.githubusercontent.com/65993041/230066602-4dd1bec7-b186-478d-8d2d-33200bdd7e80.png | width=100)
 
 
 ## 🚀 Introduction

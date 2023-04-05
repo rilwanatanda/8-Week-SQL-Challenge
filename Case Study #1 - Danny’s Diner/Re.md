@@ -10,7 +10,7 @@ Run the `initialisation.sql` script to setup the `database` and `tables`.
 solutions.sql contains the queries for all the questions + bonus questions from the case study.
 
 <p align="center">
-[<img src="https://user-images.githubusercontent.com/65993041/230066602-4dd1bec7-b186-478d-8d2d-33200bdd7e80.png"  width="30%" height="15%">](https://8weeksqlchallenge.com/case-study-1/)
+[<img src="https://user-images.githubusercontent.com/65993041/230066602-4dd1bec7-b186-478d-8d2d-33200bdd7e80.png" width="30%" height="15%">](https://8weeksqlchallenge.com/case-study-1/)
 </p>
 
 ## 🚀 Introduction
